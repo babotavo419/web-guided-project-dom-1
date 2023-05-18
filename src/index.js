@@ -64,14 +64,38 @@ header.style.fontSize = "2em"
 setInterval(() => header.classList.toggle("sky"), 1000)
 // 👉 6- Creating new elements from scratch and appending them
 // Create a new link inside the nav for "Blog"
-
-
+const blogLink = document.createElement("a")
+blogLink.textContent = "Blog"
+blogLink.href = "#"
+document.querySelector("nav").appendChild(blogLink)
+blogLink.classList.add("menu-item")
 // 👉 7- Making a copy of the card and appending it to the card group
 // DOM nodes can only exist in one spot in the DOM
 // We cannot append the same copy multiple times
-
+const secondCard = firstCard.cloneNode(true)
+document.querySelector('.card-group')
+  .appendChild(secondCard)
 
 // 👉 8- Removing an existing element and putting it back [STRETCH if time allows]
-
-
+header.remove()
+document.body.prepend(header)
 // 👉 9- Show to students the insertAdjacentHTML method [STRETCH if time allows]
+const data =   {
+    "contact": {
+      "contact-heading" : "Contact",
+      "address" : "123 Way 456 Street Somewhere, USA",
+      "phone" : "1 (888) 888-8888",
+      "email" : "sales@greatidea.io",
+    }
+  };
+  
+  const contactHeading = document.querySelector('.contact-heading');
+  const address = document.querySelector('.address');
+  const phone = document.querySelector('.phone');
+  const email = document.querySelector('.email');
+
+  contactHeading.textContent = data["contact"]["contact-heading"];
+
+address.textContent = data["contact"]["address"];
+phone.textContent = data["contact"]["phone"];
+email.textContent = data["contact"]["email"];
