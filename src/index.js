@@ -17,7 +17,7 @@ const logoTitle = document.querySelector("#logoTitle")
 const firstCard = document.querySelector(".card")
 
 // B- finding within one particular element
-const imageFirstCard = firstCard.querySelector("image")
+const imageFirstCard = firstCard.querySelector("img")
 const titleFirstCard = firstCard.querySelector("h2")
 const subtitleFirstCard = firstCard.querySelector("h3")
 const textFirstCard = firstCard.querySelector("p")
@@ -34,7 +34,7 @@ const links = document.querySelectorAll("nav a")
 links.forEach(link => console.log(link.textContent))
 
 // C- Turn the collection of links into a real array
-const linksArr = Arry.from(links)
+const linksArr = Array.from(links)
 
 // D- Use .filter to find the anchor tag with the textContent of "Home"
 const homeLink = linksArr.find(link => link.textContent === "Home")
@@ -42,22 +42,26 @@ const homeLink = linksArr.find(link => link.textContent === "Home")
 // 👉 3- Changing an element's text content
 //  A- Change the cat-related content into dog-related content
 //  B- Have the students research online the difference between textContent and innerText
-logoTitle.textContent = "Bloomtech Doggos"
-titleFirstCard.textContent = "I is DOGGGG!"
-subtitleFirstCard.textContent = "A story in three parts"
-textFirstCard.textContent = "Dogs are nice, dogs are kind, stay away from cats"
-link2FirstCard.textContent = "Dog Ipsum"
+logoTitle.textContent = "Bloomtech Doggos";
+titleFirstCard.textContent = "I is DOGGGG!";
+subtitleFirstCard.textContent = "A story in three parts";
+textFirstCard.textContent = "Dogs are nice, dogs are kind, stay away from cats";
+link2FirstCard.textContent = "Dog Ipsum";
 
 // 👉 4- Changing any property
 //  A- Using dot notation to change a few attributes
 //  B- Using .setAttribute to change a few attributes
-
-
+link1FirstCard.setAttribute("href", "https:pexels.com/search/dog")
+link2FirstCard.href = "https://doggoipsum.com"
+imageFirstCard.src = "https://herepup.com/wp-content/uploads/2015/12/Dog-Advice-1-1.jpg"
+logoTitle.className = "logo heading banana"
 // 👉 5- Changing the styling of an element
 //  A- By changing the class names on the element with the classList API
+header.classList.add("sky")
+header.classList.remove("sky")
 //  B- By manipulating inline styles on the element
-
-
+header.style.fontSize = "2em"
+setInterval(() => header.classList.toggle("sky"), 1000)
 // 👉 6- Creating new elements from scratch and appending them
 // Create a new link inside the nav for "Blog"
 
